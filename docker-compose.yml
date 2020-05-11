@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  drill-admin:
+    image: drill4j/admin:latest
+    environment:
+      - LOG_LEVEL=INFO
+    ports:
+      - 8090:8090
+    networks:
+      - drill4j-dev-network
+
+  admin-ui:
+    image: drill4j/admin-ui:latest
+    ports:
+      - 8091:8080
+    networks:
+      - drill4j-dev-network
+
+networks:
+  drill4j-dev-network:
